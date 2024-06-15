@@ -4,4 +4,6 @@ import io.vertx.core.AbstractVerticle;
 
 public class EventStoreVerticle extends AbstractVerticle
 {
+
+
 }

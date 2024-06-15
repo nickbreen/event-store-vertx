@@ -2,6 +2,7 @@ package kiwi.breen.event.store.vertx;
 
 import io.vertx.core.Vertx;
 import io.vertx.junit5.VertxExtension;
+import io.vertx.junit5.VertxTestContext;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -9,8 +10,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class EventStoreVerticleTest
 {
     @Test
-    public void shouldStartVerticle()
+    public void shouldStartVerticle(final Vertx vertx, final VertxTestContext testContext)
     {
-        Vertx.vertx().deployVerticle(new EventStoreVerticle());
+        vertx.deployVerticle(new EventStoreVerticle(), testContext.completing());
     }
 }

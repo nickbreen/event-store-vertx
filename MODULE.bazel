@@ -24,6 +24,8 @@ maven.install(
     excluded_artifacts = [
         "com.google.guava:guava",
     ],
+    fetch_javadoc = True,
+    fetch_sources = True,
     lock_file = "@//:maven_install.json",
 )
 use_repo(maven, "maven")
