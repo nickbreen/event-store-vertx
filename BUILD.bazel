@@ -1,5 +1,5 @@
 load("@rules_jvm_external//:defs.bzl", "artifact")
-load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_binary", "java_library", "java_test_suite")
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_binary", "java_junit5_test", "java_library")
 
 java_binary(
     name = "main",
@@ -11,19 +11,20 @@ java_library(
     name = "lib",
     srcs = glob(["src/main/java/**/*"]),
     resources = glob(["src/main/resources/**/*"]),
+    runtime_deps = [
+        artifact("org.slf4j:slf4j-simple"),
+    ],
     deps = [
+        artifact("org.slf4j:slf4j-api"),
         artifact("io.vertx:vertx-core"),
     ],
 )
 
-print(JUNIT5_DEPS)
-
-java_test_suite(
+java_junit5_test(
     name = "test",
     srcs = glob(["src/test/java/**/*"]),
     resources = glob(["src/test/resources/**/*"]),
-    runner = "junit5",
-    test_suffixes = ["Test.java"],
+    test_class = "kiwi.breen.event.store.vertx.EventStoreVerticleTest",
     runtime_deps = JUNIT5_DEPS,
     deps = [
         ":lib",

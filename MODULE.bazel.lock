@@ -476,10 +476,10 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "Pq3YnJEflPAALx/UMykUnN3aA5bve0fNm/cuLvt/zvI=",
-        "usagesDigest": "j0TvGoMFsCx/tyzpr8n8vW5AsptcZJPUjqU6TwtFa+o=",
+        "usagesDigest": "5SahxA3fOe4csyMkCDgyKQ6cseU8oFvhLX0CtzfvOEE=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8",
-          "@@//maven_install.json": "8ec83bed549fcd4aad26db872a6f62991c32b090be7253ba85ff8a9dca57f12b",
+          "@@//maven_install.json": "a81c8aaabf326546c73162e6c97263cfb93cb83fd44a410c14f155c978c9ad85",
           "@@contrib_rules_jvm~//contrib_rules_jvm_deps_install.json": "c65d8722c471d3b75be39f94e3c4a6ce19c4e377e96cb9b28746ac559f6267de"
         },
         "recordedDirentsInputs": {},
@@ -778,17 +778,6 @@
               "downloaded_file_path": "v1/org/apache/maven/maven-builder-support/3.9.6/maven-builder-support-3.9.6.jar"
             }
           },
-          "com_google_guava_guava_31_1_jre": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "a42edc9cab792e39fe39bb94f3fca655ed157ff87a8af78e1d6ba5b07c4a00ab",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"
-            }
-          },
           "unpinned_contrib_rules_jvm_deps": {
             "bzlFile": "@@rules_jvm_external~//:coursier.bzl",
             "ruleClassName": "coursier_fetch",
@@ -887,6 +876,17 @@
                 "https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs/4.7.0/spotbugs-4.7.0.jar"
               ],
               "downloaded_file_path": "v1/com/github/spotbugs/spotbugs/4.7.0/spotbugs-4.7.0.jar"
+            }
+          },
+          "com_google_guava_guava_31_1_jre": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a42edc9cab792e39fe39bb94f3fca655ed157ff87a8af78e1d6ba5b07c4a00ab",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"
             }
           },
           "org_apache_maven_maven_plugin_api_3_9_6": {
@@ -3153,6 +3153,17 @@
               "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar"
             }
           },
+          "org_slf4j_slf4j_api_2_0_13": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "e7c2a48e8515ba1f49fa637d57b4e2f590b3f5bd97407ac699c3aa5efb1204a9",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar"
+              ],
+              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar"
+            }
+          },
           "jaxen_jaxen_1_2_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4200,6 +4211,8 @@
               ],
               "artifacts": [
                 "{ \"group\": \"com.h2database\", \"artifact\": \"h2\", \"version\": \"2.2.224\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.13\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-simple\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-core\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-jdbc-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
@@ -4221,7 +4234,9 @@
               "fail_on_missing_checksum": true,
               "fetch_sources": false,
               "fetch_javadoc": false,
-              "excluded_artifacts": [],
+              "excluded_artifacts": [
+                "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\" }"
+              ],
               "generate_compat_repositories": false,
               "version_conflict_policy": "default",
               "override_targets": {},
@@ -5129,6 +5144,17 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/regions/2.25.23/regions-2.25.23-sources.jar"
             }
           },
+          "org_slf4j_slf4j_simple_2_0_13": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "3153fe1d689cffb94f1530b58470c306685ba68844de8857116e3b6ebb81d9f7",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/2.0.13/slf4j-simple-2.0.13.jar"
+              ],
+              "downloaded_file_path": "v1/org/slf4j/slf4j-simple/2.0.13/slf4j-simple-2.0.13.jar"
+            }
+          },
           "com_google_auto_value_auto_value_annotations_jar_sources_1_10_4": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5339,17 +5365,6 @@
               "downloaded_file_path": "v1/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar"
             }
           },
-          "com_google_guava_failureaccess_1_0_1": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "a171ee4c734dd2da837e4b16be9df4661afab72a41adaf31eb84dfdaf936ca26",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"
-            }
-          },
           "com_google_http_client_google_http_client_jar_sources_1_44_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5381,6 +5396,17 @@
                 "https://repo1.maven.org/maven2/org/apache/maven/maven-model/3.9.6/maven-model-3.9.6-sources.jar"
               ],
               "downloaded_file_path": "v1/org/apache/maven/maven-model/3.9.6/maven-model-3.9.6-sources.jar"
+            }
+          },
+          "com_google_guava_failureaccess_1_0_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a171ee4c734dd2da837e4b16be9df4661afab72a41adaf31eb84dfdaf936ca26",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"
             }
           },
           "org_eclipse_sisu_org_eclipse_sisu_inject_0_9_0_M2": {
@@ -6289,6 +6315,8 @@
               "boms": [],
               "artifacts": [
                 "{ \"group\": \"com.h2database\", \"artifact\": \"h2\", \"version\": \"2.2.224\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.13\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-simple\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-core\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-jdbc-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
@@ -6323,7 +6351,9 @@
               "use_starlark_android_rules": false,
               "aar_import_bzl_label": "@build_bazel_rules_android//android:rules.bzl",
               "duplicate_version_warning": "warn",
-              "excluded_artifacts": [],
+              "excluded_artifacts": [
+                "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\" }"
+              ],
               "repin_instructions": ""
             }
           },
