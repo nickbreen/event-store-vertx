@@ -476,10 +476,10 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "Pq3YnJEflPAALx/UMykUnN3aA5bve0fNm/cuLvt/zvI=",
-        "usagesDigest": "Ste60bnKc/IaNa3am3AlAqS5dkdY+t+v1XXRjhJlEUk=",
+        "usagesDigest": "gLAZhd8WQhXa7QO99wL0nAo+dzXAiLKZcw/IMnBKyxU=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8",
-          "@@//maven_install.json": "98846254cd8930a2aa471568bd20fb5fcbab7cb86be29a3be5e535ea91f1cfcf",
+          "@@//maven_install.json": "4e3404d92b4f8c699369734579e08770d8b748bde9c4548968f718d0272b41cd",
           "@@contrib_rules_jvm~//contrib_rules_jvm_deps_install.json": "c65d8722c471d3b75be39f94e3c4a6ce19c4e377e96cb9b28746ac559f6267de"
         },
         "recordedDirentsInputs": {},
@@ -3267,6 +3267,17 @@
               "repin_instructions": ""
             }
           },
+          "org_junit_platform_junit_platform_suite_api_jar_javadoc_1_10_2": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "cada7707386c39b950ca2d9833862a6a288a4c60ddff1a4149e2dec6863d57a3",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-suite-api/1.10.2/junit-platform-suite-api-1.10.2-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/junit/platform/junit-platform-suite-api/1.10.2/junit-platform-suite-api-1.10.2-javadoc.jar"
+            }
+          },
           "org_junit_platform_junit_platform_launcher_1_8_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4746,6 +4757,7 @@
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-launcher\", \"version\": \"1.10.2\" }",
                 "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-reporting\", \"version\": \"1.10.2\" }",
+                "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-suite-api\", \"version\": \"1.10.2\", \"packaging\": \"jar\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-api\", \"version\": \"5.10.2\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-params\", \"version\": \"5.10.2\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-engine\", \"version\": \"5.10.2\" }",
@@ -5903,6 +5915,17 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/regions/2.25.23/regions-2.25.23-sources.jar"
             }
           },
+          "org_junit_platform_junit_platform_suite_api_1_10_2": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "cdfc2b9b34f02fb0fb12db5e5a579c19bc111a2aed6f4c6e9a638d7a652961eb",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-suite-api/1.10.2/junit-platform-suite-api-1.10.2.jar"
+              ],
+              "downloaded_file_path": "v1/org/junit/platform/junit-platform-suite-api/1.10.2/junit-platform-suite-api-1.10.2.jar"
+            }
+          },
           "org_slf4j_slf4j_simple_2_0_13": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6010,6 +6033,17 @@
             "attributes": {
               "generating_repository": "contrib_rules_jvm_deps",
               "target_name": "org_ow2_asm_asm_analysis"
+            }
+          },
+          "org_junit_platform_junit_platform_suite_api_jar_sources_1_10_2": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "0da2dad4f5d546410cd9e0d88a1c556ccb4c1fbfe6812fa7c0423e881f014e3c",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-suite-api/1.10.2/junit-platform-suite-api-1.10.2-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/junit/platform/junit-platform-suite-api/1.10.2/junit-platform-suite-api-1.10.2-sources.jar"
             }
           },
           "software_amazon_awssdk_s3_jar_sources_2_25_23": {
@@ -7224,6 +7258,7 @@
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-launcher\", \"version\": \"1.10.2\" }",
                 "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-reporting\", \"version\": \"1.10.2\" }",
+                "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-suite-api\", \"version\": \"1.10.2\", \"packaging\": \"jar\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-api\", \"version\": \"5.10.2\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-params\", \"version\": \"5.10.2\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-engine\", \"version\": \"5.10.2\" }",

@@ -1,5 +1,5 @@
 load("@rules_jvm_external//:defs.bzl", "artifact")
-load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_binary", "java_junit5_test", "java_library")
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_binary", "java_library", "java_test_suite")
 
 java_binary(
     name = "main",
@@ -20,11 +20,13 @@ java_library(
     ],
 )
 
-java_junit5_test(
+java_test_suite(
     name = "test",
+    size = "small",
     srcs = glob(["src/test/java/**/*"]),
+    package_prefixes = [".kiwi."],
     resources = glob(["src/test/resources/**/*"]),
-    test_class = "kiwi.breen.event.store.vertx.EventStoreVerticleTest",
+    runner = "junit5",
     runtime_deps = JUNIT5_DEPS,
     deps = [
         ":lib",
