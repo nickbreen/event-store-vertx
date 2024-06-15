@@ -1,9 +1,11 @@
-package src.main.java.kiwi.breen.event.store.vertx;
+package kiwi.breen.event.store.vertx;
+
+import io.vertx.core.Vertx;
 
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(final String[] args)
     {
-
+        Vertx.vertx().deployVerticle(new EventStoreVerticle());
     }
 }

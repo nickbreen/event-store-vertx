@@ -1,14 +1,22 @@
 load("@rules_jvm_external//:defs.bzl", "artifact")
-load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_library", "java_test_suite")
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_binary", "java_library", "java_test_suite")
+
+java_binary(
+    name = "main",
+    main_class = "kiwi.breen.event.store.vertx.Main",
+    runtime_deps = [":lib"],
+)
 
 java_library(
-    name = "main",
+    name = "lib",
     srcs = glob(["src/main/java/**/*"]),
     resources = glob(["src/main/resources/**/*"]),
     deps = [
         artifact("io.vertx:vertx-core"),
     ],
 )
+
+print(JUNIT5_DEPS)
 
 java_test_suite(
     name = "test",
@@ -18,7 +26,7 @@ java_test_suite(
     test_suffixes = ["Test.java"],
     runtime_deps = JUNIT5_DEPS,
     deps = [
-        ":main",
+        ":lib",
         artifact("io.vertx:vertx-core"),
         artifact("io.vertx:vertx-junit5"),
         artifact("org.junit.jupiter:junit-jupiter-api"),

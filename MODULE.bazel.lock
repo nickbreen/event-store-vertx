@@ -476,10 +476,10 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "Pq3YnJEflPAALx/UMykUnN3aA5bve0fNm/cuLvt/zvI=",
-        "usagesDigest": "Tlx9Znr04OrnhDRRImWuZ5NdlL/k1fIW4XpDEd1vtBQ=",
+        "usagesDigest": "j0TvGoMFsCx/tyzpr8n8vW5AsptcZJPUjqU6TwtFa+o=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8",
-          "@@//maven_install.json": "3afab3d8f6fff534fc56176a62f0bf8dc0c2d0c6ca52f880bd41d248eed18785",
+          "@@//maven_install.json": "8ec83bed549fcd4aad26db872a6f62991c32b090be7253ba85ff8a9dca57f12b",
           "@@contrib_rules_jvm~//contrib_rules_jvm_deps_install.json": "c65d8722c471d3b75be39f94e3c4a6ce19c4e377e96cb9b28746ac559f6267de"
         },
         "recordedDirentsInputs": {},
@@ -4199,6 +4199,7 @@
                 "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
               ],
               "artifacts": [
+                "{ \"group\": \"com.h2database\", \"artifact\": \"h2\", \"version\": \"2.2.224\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-core\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-jdbc-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
@@ -5577,6 +5578,17 @@
               "downloaded_file_path": "v1/com/google/api/grpc/grpc-google-cloud-storage-v2/2.36.1-alpha/grpc-google-cloud-storage-v2-2.36.1-alpha-sources.jar"
             }
           },
+          "com_h2database_h2_2_2_224": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "b9d8f19358ada82a4f6eb5b174c6cfe320a375b5a9cb5a4fe456d623e6e55497",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/h2database/h2/2.2.224/h2-2.2.224.jar"
+              ],
+              "downloaded_file_path": "v1/com/h2database/h2/2.2.224/h2-2.2.224.jar"
+            }
+          },
           "io_netty_netty_common_4_1_87_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6276,6 +6288,7 @@
               ],
               "boms": [],
               "artifacts": [
+                "{ \"group\": \"com.h2database\", \"artifact\": \"h2\", \"version\": \"2.2.224\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-core\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-jdbc-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
