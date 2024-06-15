@@ -1,0 +1,26 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_library", "java_test_suite")
+
+java_library(
+    name = "main",
+    srcs = glob(["src/main/java/**/*"]),
+    resources = glob(["src/main/resources/**/*"]),
+    deps = [
+        artifact("io.vertx:vertx-core"),
+    ],
+)
+
+java_test_suite(
+    name = "test",
+    srcs = glob(["src/test/java/**/*"]),
+    resources = glob(["src/test/resources/**/*"]),
+    runner = "junit5",
+    test_suffixes = ["Test.java"],
+    runtime_deps = JUNIT5_DEPS,
+    deps = [
+        ":main",
+        artifact("io.vertx:vertx-core"),
+        artifact("io.vertx:vertx-junit5"),
+        artifact("org.junit.jupiter:junit-jupiter-api"),
+    ],
+)
