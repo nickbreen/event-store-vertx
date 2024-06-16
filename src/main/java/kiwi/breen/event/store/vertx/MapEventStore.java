@@ -6,7 +6,17 @@ import java.util.function.Consumer;
 
 public class MapEventStore implements EventStore
 {
-    private final ConcurrentNavigableMap<Long, Event> eventStore = new ConcurrentSkipListMap<>();
+    private final ConcurrentNavigableMap<Long, Event> eventStore;
+
+    public MapEventStore()
+    {
+        this(new ConcurrentSkipListMap<>());
+    }
+
+    MapEventStore(final ConcurrentNavigableMap<Long, Event> eventStore)
+    {
+        this.eventStore = eventStore;
+    }
 
     @Override
     public void store(final Event event)

@@ -14,13 +14,17 @@ public class Main
     {
         final Vertx vertx = Vertx.vertx();
 
-        final EventStore eventStore = new MapEventStore();
+        final TimeStampInterceptor timeStampInterceptor = new TimeStampInterceptor(Instant::now);
+        vertx.eventBus().addOutboundInterceptor(timeStampInterceptor);
 
-        vertx.eventBus().addOutboundInterceptor(
-                new EventStoreInterceptor(
-                        new AtomicLong(),
-                        Instant::now,
-                        eventStore));
+        final AtomicLong sequence = new AtomicLong();
+        final SequenceInterceptor sequenceInterceptor = new SequenceInterceptor(sequence);
+        vertx.eventBus().addOutboundInterceptor(sequenceInterceptor);
+
+        final EventStore eventStore = new MapEventStore();
+        final EventStoreInterceptor eventStoreInterceptor = new EventStoreInterceptor(eventStore);
+        vertx.eventBus().addOutboundInterceptor(eventStoreInterceptor);
+
         vertx.deployVerticle(new EventStoreVerticle()).onComplete(
                 x -> LOGGER.info("Verticle started {}", x),
                 cause -> LOGGER.error("Verticle failed to start", cause)
