@@ -6,7 +6,6 @@ import io.vertx.core.eventbus.DeliveryContext;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import org.slf4j.Logger;
 
 import java.time.Instant;
 import java.util.function.BiConsumer;
@@ -15,8 +14,6 @@ import static java.util.stream.IntStream.range;
 
 public class EventStoreInterceptor implements Handler<DeliveryContext<JsonObject>>
 {
-    private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(EventStoreInterceptor.class);
-
     private final EventStore store;
 
     public EventStoreInterceptor(final EventStore store)
@@ -32,13 +29,7 @@ public class EventStoreInterceptor implements Handler<DeliveryContext<JsonObject
         final Instant timestamp = TimeStampInterceptor.extractTimestamp(message.headers());
         final JsonArray headers = jsonifyHeadersPreservingDuplicates(message.headers());
 
-        store.store(
-                sequence,
-                timestamp,
-                message.address(),
-                context.send(),
-                message.body(),
-                headers);
+        store.store(sequence, timestamp, message.address(), context.send(), message.body(), headers);
         context.next();
     }
 

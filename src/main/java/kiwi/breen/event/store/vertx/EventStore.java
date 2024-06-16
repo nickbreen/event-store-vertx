@@ -1,6 +1,5 @@
 package kiwi.breen.event.store.vertx;
 
-import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
