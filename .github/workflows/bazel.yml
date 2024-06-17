@@ -1,0 +1,25 @@
+name: Bazel CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths-ignore:
+      - README.md
+
+jobs:
+  bazel:
+    name: Bazel Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bazel Home RC
+        run: |
+          echo "build --disk_cache=~/.cache/bazel.disk" >> ~/.bazelrc
+      - uses: actions/cache@v3
+        with:
+          path: ${{github.workspace}}/.cache/bazel.disk
+          key: bazel
+      - uses: actions/checkout@v3
+      - name: Bazel Build
+        run: bazel build ...
+      - name: Bazel Tests
+        run: bazel test ...
