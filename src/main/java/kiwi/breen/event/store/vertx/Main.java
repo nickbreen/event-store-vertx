@@ -21,7 +21,7 @@ public class Main
         final SequenceInterceptor sequenceInterceptor = new SequenceInterceptor(sequence);
         vertx.eventBus().addOutboundInterceptor(sequenceInterceptor);
 
-        final EventStore eventStore = new MapEventStore();
+        final EventStore eventStore = null;
         final EventStoreInterceptor eventStoreInterceptor = new EventStoreInterceptor(
                 eventStore,
                 SequenceInterceptor::extractSequence,

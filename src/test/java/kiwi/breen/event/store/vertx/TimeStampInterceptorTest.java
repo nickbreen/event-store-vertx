@@ -17,10 +17,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(VertxExtension.class)
 class TimeStampInterceptorTest
 {
-    public static final String TEST_ADDRESS = "test.address";
-    public static final JsonObject TEST_MESSAGE_BODY = JsonObject.of("msg", "Hello World!");
+    private static final String TEST_ADDRESS = "test.address";
+    private static final JsonObject TEST_MESSAGE_BODY = JsonObject.of("msg", "Hello World!");
+    private static final Instant time = Instant.now();
 
-    private final Instant time = Instant.now();
     private final TimeStampInterceptor interceptor = new TimeStampInterceptor(() -> time);
 
     @BeforeEach

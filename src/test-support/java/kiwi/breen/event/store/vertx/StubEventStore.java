@@ -5,19 +5,13 @@ import io.vertx.core.Promise;
 
 import java.util.Optional;
 import java.util.concurrent.ConcurrentNavigableMap;
-import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.function.Consumer;
 
-public class MapEventStore implements EventStore
+public class StubEventStore implements EventStore
 {
     private final ConcurrentNavigableMap<Long, Event> eventStore;
 
-    public MapEventStore()
-    {
-        this(new ConcurrentSkipListMap<>());
-    }
-
-    MapEventStore(final ConcurrentNavigableMap<Long, Event> eventStore)
+    StubEventStore(final ConcurrentNavigableMap<Long, Event> eventStore)
     {
         this.eventStore = eventStore;
     }

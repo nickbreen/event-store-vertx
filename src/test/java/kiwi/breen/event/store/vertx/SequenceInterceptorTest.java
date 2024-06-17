@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(VertxExtension.class)
 class SequenceInterceptorTest
 {
-    public static final String TEST_ADDRESS = "test.address";
-    public static final JsonObject TEST_MESSAGE_BODY = JsonObject.of("msg", "Hello World!");
+    private static final String TEST_ADDRESS = "test.address";
+    private static final JsonObject TEST_MESSAGE_BODY = JsonObject.of("msg", "Hello World!");
     private final AtomicLong sequence = new AtomicLong(700);
     private final SequenceInterceptor interceptor = new SequenceInterceptor(sequence);
 

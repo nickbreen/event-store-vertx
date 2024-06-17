@@ -476,10 +476,10 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "Pq3YnJEflPAALx/UMykUnN3aA5bve0fNm/cuLvt/zvI=",
-        "usagesDigest": "gLAZhd8WQhXa7QO99wL0nAo+dzXAiLKZcw/IMnBKyxU=",
+        "usagesDigest": "vF4GziR4maWF7ec71546EijiJ6llQ86Yi8CyO6FJTNQ=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8",
-          "@@//maven_install.json": "4e3404d92b4f8c699369734579e08770d8b748bde9c4548968f718d0272b41cd",
+          "@@//maven_install.json": "6ee9e6efd8efa6f52fb3631017380dd8464b24e1d4279e0b851050dbdace5873",
           "@@contrib_rules_jvm~//contrib_rules_jvm_deps_install.json": "c65d8722c471d3b75be39f94e3c4a6ce19c4e377e96cb9b28746ac559f6267de"
         },
         "recordedDirentsInputs": {},
@@ -678,6 +678,17 @@
                 "https://repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/3.9.6/maven-repository-metadata-3.9.6.jar"
               ],
               "downloaded_file_path": "v1/org/apache/maven/maven-repository-metadata/3.9.6/maven-repository-metadata-3.9.6.jar"
+            }
+          },
+          "com_github_docker_java_docker_java_transport_zerodep_jar_javadoc_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a761745c64068d035985c122e1abf13b5039cf226de88e3a129c0bf41c44dba8",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6-javadoc.jar"
             }
           },
           "com_google_api_client_google_api_client_2_4_0": {
@@ -1316,6 +1327,17 @@
               "target_name": "org_junit_platform_junit_platform_commons"
             }
           },
+          "com_mysql_mysql_connector_j_8_4_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d77962877d010777cff997015da90ee689f0f4bb76848340e1488f2b83332af5",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.4.0/mysql-connector-j-8.4.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/mysql/mysql-connector-j/8.4.0/mysql-connector-j-8.4.0.jar"
+            }
+          },
           "org_apache_maven_resolver_maven_resolver_impl_1_9_18": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -1395,12 +1417,34 @@
               "target_name": "com_google_code_gson_gson"
             }
           },
+          "org_rnorth_duct_tape_duct_tape_jar_sources_1_0_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "b385fd2c2b435c313b3f02988d351503230c9631bfb432261cbd8ce9765d2a26",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8-sources.jar"
+            }
+          },
           "net_sourceforge_saxon_saxon_dom": {
             "bzlFile": "@@rules_jvm_external~//private:compat_repository.bzl",
             "ruleClassName": "compat_repository",
             "attributes": {
               "generating_repository": "contrib_rules_jvm_deps",
               "target_name": "net_sourceforge_saxon_saxon_dom"
+            }
+          },
+          "org_rnorth_duct_tape_duct_tape_jar_javadoc_1_0_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "76081d631192cfb53a502b34859e15feaba053cfb2c3722da2fd7fbca1ff433a",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8-javadoc.jar"
             }
           },
           "org_dom4j_dom4j_2_1_3": {
@@ -2065,6 +2109,17 @@
               "downloaded_file_path": "v1/com/google/http-client/google-http-client-jackson2/1.37.0/google-http-client-jackson2-1.37.0.jar"
             }
           },
+          "org_apache_commons_commons_compress_1_24_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "fbf2c5d275e513c08f4e4fb539726dbf3ac2142af956ba93efb983244f0c36bd",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar"
+            }
+          },
           "com_google_protobuf_protobuf_java_util_3_25_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -2120,6 +2175,17 @@
               "downloaded_file_path": "v1/com/google/http-client/google-http-client-apache-v2/1.44.1/google-http-client-apache-v2-1.44.1.jar"
             }
           },
+          "com_mysql_mysql_connector_j_jar_sources_8_4_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "1b445be29657cc8e65ec34f8756b567403ca5d06a0aebd0f7ff619a991a13357",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.4.0/mysql-connector-j-8.4.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/mysql/mysql-connector-j/8.4.0/mysql-connector-j-8.4.0-sources.jar"
+            }
+          },
           "net_sourceforge_pmd_pmd_modelica_6_46_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -2151,6 +2217,17 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-services/1.62.2/grpc-services-1.62.2-sources.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-services/1.62.2/grpc-services-1.62.2-sources.jar"
+            }
+          },
+          "net_java_dev_jna_jna_jar_sources_5_13_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a4c45843e8f60df141c4f37602365a421bb278ca1ef30ba0a043d6a871dd29f4",
+              "urls": [
+                "https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/net/java/dev/jna/jna/5.13.0/jna-5.13.0-sources.jar"
             }
           },
           "com_google_http_client_google_http_client_appengine_1_44_1": {
@@ -2494,6 +2571,17 @@
             "attributes": {
               "generating_repository": "contrib_rules_jvm_deps",
               "target_name": "org_apache_bcel_bcel"
+            }
+          },
+          "org_testcontainers_testcontainers_jar_javadoc_1_19_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "f663ec7865178f1ce181048d052a4dcb1534d26f51a3a9416fda44119810535a",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/testcontainers/testcontainers/1.19.8/testcontainers-1.19.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/testcontainers/testcontainers/1.19.8/testcontainers-1.19.8-javadoc.jar"
             }
           },
           "org_reflections_reflections": {
@@ -3013,6 +3101,17 @@
               "target_name": "org_checkerframework_checker_compat_qual"
             }
           },
+          "com_fasterxml_jackson_core_jackson_annotations_jar_sources_2_10_3": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "6310be2ded72eed441291587ed4513c93566b5057b67d05d04cb6d1db4c726b2",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3-sources.jar"
+            }
+          },
           "io_grpc_grpc_googleapis_jar_sources_1_62_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -3022,6 +3121,17 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-googleapis/1.62.2/grpc-googleapis-1.62.2-sources.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-googleapis/1.62.2/grpc-googleapis-1.62.2-sources.jar"
+            }
+          },
+          "org_jetbrains_annotations_jar_sources_17_0_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "b2c0d02e0a32c56d359e99634e7d769f9b1a8cd6e25061995abad1c1baf86f56",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/jetbrains/annotations/17.0.0/annotations-17.0.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/jetbrains/annotations/17.0.0/annotations-17.0.0-sources.jar"
             }
           },
           "software_amazon_awssdk_annotations_jar_sources_2_25_23": {
@@ -3052,17 +3162,6 @@
                 "https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/4.7.0/spotbugs-annotations-4.7.0.jar"
               ],
               "downloaded_file_path": "v1/com/github/spotbugs/spotbugs-annotations/4.7.0/spotbugs-annotations-4.7.0.jar"
-            }
-          },
-          "org_checkerframework_checker_qual_jar_sources_3_12_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "fd99a45195ed893803624d1030387056a96601013f5e61ccabd79abb4ddfa876",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0-sources.jar"
             }
           },
           "com_h2database_h2_jar_javadoc_2_2_224": {
@@ -3096,6 +3195,17 @@
                 "https://repo1.maven.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar"
               ],
               "downloaded_file_path": "v1/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar"
+            }
+          },
+          "net_java_dev_jna_jna_jar_javadoc_5_13_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "94c37cd3df8445bcb248a9a5527d74c9fd5bbc41bd4328a6bcd23aac563518ee",
+              "urls": [
+                "https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/net/java/dev/jna/jna/5.13.0/jna-5.13.0-javadoc.jar"
             }
           },
           "com_google_re2j_re2j": {
@@ -3289,6 +3399,28 @@
               "downloaded_file_path": "v1/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar"
             }
           },
+          "net_java_dev_jna_jna_5_13_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "66d4f819a062a51a1d5627bffc23fac55d1677f0e0a1feba144aabdd670a64bb",
+              "urls": [
+                "https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar"
+              ],
+              "downloaded_file_path": "v1/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar"
+            }
+          },
+          "org_testcontainers_junit_jupiter_jar_javadoc_1_19_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "9c3f6e01d7424ca60f86fa45f1ca4b4665c8ad2cece561f62b2f93e10cddece1",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/testcontainers/junit-jupiter/1.19.8/junit-jupiter-1.19.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/testcontainers/junit-jupiter/1.19.8/junit-jupiter-1.19.8-javadoc.jar"
+            }
+          },
           "org_junit_jupiter_junit_jupiter_api_5_8_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -3298,6 +3430,17 @@
                 "https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar"
               ],
               "downloaded_file_path": "v1/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar"
+            }
+          },
+          "org_apache_commons_commons_compress_jar_sources_1_24_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "b79da77c5bb6e9b528d60c7336a59dc08cab29baac52f3d35441455c5fec4db1",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0-sources.jar"
             }
           },
           "io_opencensus_opencensus_proto_0_2_0": {
@@ -3514,6 +3657,17 @@
                 "https://repo1.maven.org/maven2/io/netty/netty-codec-http2/4.1.87.Final/netty-codec-http2-4.1.87.Final.jar"
               ],
               "downloaded_file_path": "v1/io/netty/netty-codec-http2/4.1.87.Final/netty-codec-http2-4.1.87.Final.jar"
+            }
+          },
+          "com_fasterxml_jackson_core_jackson_annotations_2_10_3": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "49dfdc4cfa46d165ecfed630ba164b6641d59d5fe1aa698a19c13f966d3f13cf",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar"
+              ],
+              "downloaded_file_path": "v1/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar"
             }
           },
           "io_grpc_grpc_netty_shaded_jar_sources_1_62_2": {
@@ -3741,6 +3895,17 @@
               "target_name": "net_sourceforge_pmd_pmd_swift"
             }
           },
+          "org_checkerframework_checker_qual_jar_javadoc_3_42_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "ecbe494dbb7eb8e1a59bccf773735df66c648c5c8b7623ffc2d2fb9995f55300",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0-javadoc.jar"
+            }
+          },
           "org_fusesource_jansi_jansi_2_4_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -3796,6 +3961,17 @@
               "downloaded_file_path": "v1/com/google/inject/guice/5.1.0/guice-5.1.0.jar"
             }
           },
+          "com_github_docker_java_docker_java_transport_zerodep_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "fdfd4c7d81eaf8659e6ce6bdbb986228619d9c7b654dbd5c85abd044f1de0330",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar"
+            }
+          },
           "com_google_api_gax_httpjson_2_46_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -3824,6 +4000,28 @@
                 "https://repo1.maven.org/maven2/org/apache/tomcat/annotations-api/6.0.53/annotations-api-6.0.53.jar"
               ],
               "downloaded_file_path": "v1/org/apache/tomcat/annotations-api/6.0.53/annotations-api-6.0.53.jar"
+            }
+          },
+          "org_apache_commons_commons_compress_jar_javadoc_1_24_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "183b9558d0ca0f4abd26436edc46d13b3f4f76ed300e524a1861efbf2ac33e88",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0-javadoc.jar"
+            }
+          },
+          "org_testcontainers_junit_jupiter_1_19_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "c0657b43f2639899cc0c9b24b1d05a5545ee88f848ddeda9eade5752ff9fe6da",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/testcontainers/junit-jupiter/1.19.8/junit-jupiter-1.19.8.jar"
+              ],
+              "downloaded_file_path": "v1/org/testcontainers/junit-jupiter/1.19.8/junit-jupiter-1.19.8.jar"
             }
           },
           "net_sourceforge_pmd_pmd_objectivec_6_46_0": {
@@ -3892,6 +4090,17 @@
               "downloaded_file_path": "v1/com/mchange/mchange-commons-java/0.2.19/mchange-commons-java-0.2.19-sources.jar"
             }
           },
+          "com_fasterxml_jackson_core_jackson_annotations_jar_javadoc_2_10_3": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "e464e538ecfc3f040f30be13a1e66b796ee3bb5ca7308fc6c8b1f97296681e4d",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3-javadoc.jar"
+            }
+          },
           "io_netty_netty_buffer_4_1_87_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -3922,6 +4131,17 @@
               "downloaded_file_path": "v1/net/sourceforge/saxon/saxon/9.1.0.8/saxon-9.1.0.8.jar"
             }
           },
+          "org_jetbrains_annotations_jar_javadoc_17_0_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d93eb1856e4194b5f4fbac4011d527010d56db57055121f92e54702ea6dafa66",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/jetbrains/annotations/17.0.0/annotations-17.0.0-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/jetbrains/annotations/17.0.0/annotations-17.0.0-javadoc.jar"
+            }
+          },
           "javax_inject_javax_inject_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -3939,6 +4159,17 @@
             "attributes": {
               "generating_repository": "contrib_rules_jvm_deps",
               "target_name": "jaxen_jaxen"
+            }
+          },
+          "com_google_protobuf_protobuf_java_jar_javadoc_3_25_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "168ed8adda19763430a03c8de68ad0c0618f904efc32df3e9ef3e49a292bdf69",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1-javadoc.jar"
             }
           },
           "com_google_guava_failureaccess_jar_sources_1_0_2": {
@@ -3972,6 +4203,17 @@
                 "https://repo1.maven.org/maven2/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4-sources.jar"
+            }
+          },
+          "org_testcontainers_junit_jupiter_jar_sources_1_19_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "9a8211ab08242fa94d27cfb591aac5645b52a25e00a89d9443a16eac22287a47",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/testcontainers/junit-jupiter/1.19.8/junit-jupiter-1.19.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/testcontainers/junit-jupiter/1.19.8/junit-jupiter-1.19.8-sources.jar"
             }
           },
           "com_google_android_annotations_4_1_1_4": {
@@ -4092,6 +4334,17 @@
               "downloaded_file_path": "v1/io/vertx/vertx-junit5/4.5.8/vertx-junit5-4.5.8.jar"
             }
           },
+          "org_xerial_sqlite_jdbc_3_46_0_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "e697df15be3f95219d80773c5f1002030e33e932adda186c1c86fd51df6691a9",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.46.0.0/sqlite-jdbc-3.46.0.0.jar"
+              ],
+              "downloaded_file_path": "v1/org/xerial/sqlite-jdbc/3.46.0.0/sqlite-jdbc-3.46.0.0.jar"
+            }
+          },
           "com_google_auth_google_auth_library_oauth2_http": {
             "bzlFile": "@@rules_jvm_external~//private:compat_repository.bzl",
             "ruleClassName": "compat_repository",
@@ -4109,6 +4362,17 @@
                 "https://repo1.maven.org/maven2/io/netty/netty-codec-socks/4.1.110.Final/netty-codec-socks-4.1.110.Final-javadoc.jar"
               ],
               "downloaded_file_path": "v1/io/netty/netty-codec-socks/4.1.110.Final/netty-codec-socks-4.1.110.Final-javadoc.jar"
+            }
+          },
+          "org_xerial_sqlite_jdbc_jar_javadoc_3_46_0_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d54721489952adce3eac915f20f8147a1c138a5c575413a8e751274bc49169ac",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.46.0.0/sqlite-jdbc-3.46.0.0-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/xerial/sqlite-jdbc/3.46.0.0/sqlite-jdbc-3.46.0.0-javadoc.jar"
             }
           },
           "commons_logging_commons_logging_jar_sources_1_2": {
@@ -4320,6 +4584,17 @@
                 "https://repo1.maven.org/maven2/software/amazon/awssdk/http-auth-spi/2.25.23/http-auth-spi-2.25.23-sources.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/awssdk/http-auth-spi/2.25.23/http-auth-spi-2.25.23-sources.jar"
+            }
+          },
+          "com_github_docker_java_docker_java_transport_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "321529baaf7ab7f50c3e9a56f37b6dbcd9ef4a0a2d8466110e202a6e07f88598",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar"
             }
           },
           "org_slf4j_slf4j_api_jar_sources_2_0_13": {
@@ -4754,6 +5029,7 @@
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-simple\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-core\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-jdbc-client\", \"version\": \"4.5.8\" }",
+                "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-sql-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-launcher\", \"version\": \"1.10.2\" }",
                 "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-reporting\", \"version\": \"1.10.2\" }",
@@ -4761,6 +5037,11 @@
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-api\", \"version\": \"5.10.2\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-params\", \"version\": \"5.10.2\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-engine\", \"version\": \"5.10.2\" }",
+                "{ \"group\": \"org.testcontainers\", \"artifact\": \"junit-jupiter\", \"version\": \"1.19.8\" }",
+                "{ \"group\": \"com.h2database\", \"artifact\": \"h2\", \"version\": \"2.2.224\" }",
+                "{ \"group\": \"org.xerial\", \"artifact\": \"sqlite-jdbc\", \"version\": \"3.46.0.0\" }",
+                "{ \"group\": \"com.mysql\", \"artifact\": \"mysql-connector-j\", \"version\": \"8.4.0\" }",
+                "{ \"group\": \"org.postgresql\", \"artifact\": \"postgresql\", \"version\": \"42.7.3\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
                 "{ \"group\": \"com.google.code.gson\", \"artifact\": \"gson\", \"version\": \"2.8.9\" }",
                 "{ \"group\": \"com.google.errorprone\", \"artifact\": \"error_prone_annotations\", \"version\": \"2.3.2\" }",
@@ -4881,6 +5162,17 @@
               "downloaded_file_path": "v1/net/bytebuddy/byte-buddy/1.12.7/byte-buddy-1.12.7.jar"
             }
           },
+          "org_jetbrains_annotations_17_0_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "195fb0da046d55bb042e91543484cf1da68b02bb7afbfe031f229e45ac84b3f2",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar"
+              ],
+              "downloaded_file_path": "v1/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar"
+            }
+          },
           "com_google_api_gax_grpc_jar_sources_2_46_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4901,6 +5193,17 @@
                 "https://repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-linux-aarch_64.jar"
               ],
               "downloaded_file_path": "v1/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-linux-aarch_64.jar"
+            }
+          },
+          "com_google_protobuf_protobuf_java_jar_sources_3_25_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "104e26e3772a4af530057bf84e81f7ffabd69097551ab1989a2ab2614cb47463",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1-sources.jar"
             }
           },
           "org_apache_maven_resolver_maven_resolver_named_locks_1_9_18": {
@@ -5391,17 +5694,6 @@
               "target_name": "net_sourceforge_saxon_saxon"
             }
           },
-          "org_checkerframework_checker_qual_jar_javadoc_3_12_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "760ed10dff3a7fdf617e2591949e7831995a959a132572a63529c6562800aa89",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0-javadoc.jar"
-              ],
-              "downloaded_file_path": "v1/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0-javadoc.jar"
-            }
-          },
           "software_amazon_awssdk_annotations_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5427,6 +5719,17 @@
             "attributes": {
               "generating_repository": "contrib_rules_jvm_deps",
               "target_name": "io_netty_netty_tcnative_boringssl_static_osx_aarch_64"
+            }
+          },
+          "com_mysql_mysql_connector_j_jar_javadoc_8_4_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d8efc88b1a243c064c14275c442cc0f0e443268658d2d434133252acd2f8c17f",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.4.0/mysql-connector-j-8.4.0-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/com/mysql/mysql-connector-j/8.4.0/mysql-connector-j-8.4.0-javadoc.jar"
             }
           },
           "io_grpc_grpc_inprocess_jar_sources_1_62_2": {
@@ -5600,6 +5903,17 @@
                 "https://repo1.maven.org/maven2/com/google/guava/guava-testlib/31.1-jre/guava-testlib-31.1-jre.jar"
               ],
               "downloaded_file_path": "v1/com/google/guava/guava-testlib/31.1-jre/guava-testlib-31.1-jre.jar"
+            }
+          },
+          "org_testcontainers_testcontainers_jar_sources_1_19_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "07df386f251229fa5de7a6d444965ea839dc76b5f66034573bcecc8886b65f9b",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/testcontainers/testcontainers/1.19.8/testcontainers-1.19.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/testcontainers/testcontainers/1.19.8/testcontainers-1.19.8-sources.jar"
             }
           },
           "io_grpc_grpc_api_jar_sources_1_62_2": {
@@ -5965,6 +6279,17 @@
                 "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.37.1/proto-google-common-protos-2.37.1-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/api/grpc/proto-google-common-protos/2.37.1/proto-google-common-protos-2.37.1-sources.jar"
+            }
+          },
+          "org_postgresql_postgresql_42_7_3": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a2644cbfba1baa145ff7e8c8ef582a6eed7a7ec4ca792f7f054122bdec756268",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar"
+              ],
+              "downloaded_file_path": "v1/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar"
             }
           },
           "com_google_code_findbugs_jsr305_3_0_2": {
@@ -6342,6 +6667,17 @@
               "downloaded_file_path": "v1/com/google/protobuf/protobuf-java/3.25.2/protobuf-java-3.25.2.jar"
             }
           },
+          "com_google_protobuf_protobuf_java_3_25_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "48a8e58a1a8f82eff141a7a388d38dfe77d7a48d5e57c9066ee37f19147e20df",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar"
+            }
+          },
           "io_netty_netty_resolver_jar_javadoc_4_1_110_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6625,6 +6961,28 @@
               "downloaded_file_path": "v1/org/ow2/asm/asm-analysis/9.3/asm-analysis-9.3.jar"
             }
           },
+          "org_rnorth_duct_tape_duct_tape_1_0_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "31cef12ddec979d1f86d7cf708c41a17da523d05c685fd6642e9d0b2addb7240",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar"
+              ],
+              "downloaded_file_path": "v1/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar"
+            }
+          },
+          "com_github_docker_java_docker_java_transport_jar_javadoc_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "edfb1b24bdb4b1dd2e9a0da7b9a52d563d28c66c334e131ea27b1942034235a2",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6-javadoc.jar"
+            }
+          },
           "org_slf4j_jul_to_slf4j_2_0_12": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6686,6 +7044,17 @@
                 "https://repo1.maven.org/maven2/io/netty/netty-resolver/4.1.108.Final/netty-resolver-4.1.108.Final.jar"
               ],
               "downloaded_file_path": "v1/io/netty/netty-resolver/4.1.108.Final/netty-resolver-4.1.108.Final.jar"
+            }
+          },
+          "com_github_docker_java_docker_java_transport_zerodep_jar_sources_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "6be75de355f4bfd33802c5c7d7aeeaad3d3ee2b990b365cb007027a1c9e32dd5",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6-sources.jar"
             }
           },
           "com_google_guava_guava_testlib_jar_javadoc_31_1_jre": {
@@ -6784,6 +7153,17 @@
               "downloaded_file_path": "v1/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2-sources.jar"
             }
           },
+          "org_postgresql_postgresql_jar_javadoc_42_7_3": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "ba92c19ae588cfd9591a02daf61fb4b7a7f8ade80cb53a0512a764e09e1bea1b",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.3/postgresql-42.7.3-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/org/postgresql/postgresql/42.7.3/postgresql-42.7.3-javadoc.jar"
+            }
+          },
           "io_grpc_grpc_protobuf_lite_1_40_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6861,6 +7241,17 @@
             "attributes": {
               "generating_repository": "contrib_rules_jvm_deps",
               "target_name": "io_perfmark_perfmark_api"
+            }
+          },
+          "com_github_docker_java_docker_java_api_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "3a81e4145291fffb67ebc75c0e19a56416933e912d8f217c378940424d2329b1",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar"
             }
           },
           "com_google_code_gson_gson_jar_sources_2_8_9": {
@@ -7084,6 +7475,17 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/http-client-spi/2.25.23/http-client-spi-2.25.23.jar"
             }
           },
+          "com_github_docker_java_docker_java_api_jar_sources_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "801753a6cd4a84092ae136453fafce5fd60df24d55bd4e25424ba1d45bc1852e",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6-sources.jar"
+            }
+          },
           "org_xmlresolver_xmlresolver_jar_data_4_2_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7104,6 +7506,28 @@
                 "https://repo1.maven.org/maven2/software/amazon/awssdk/json-utils/2.25.23/json-utils-2.25.23.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/awssdk/json-utils/2.25.23/json-utils-2.25.23.jar"
+            }
+          },
+          "com_github_docker_java_docker_java_transport_jar_sources_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "3b229d7ef615e886d806a04be5ae3e5f2b1ba4407e02f162dbbadf8257cd7e0b",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6-sources.jar"
+            }
+          },
+          "org_xerial_sqlite_jdbc_jar_sources_3_46_0_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "8d199c82c4375c96b967b308e2eff73feb44d8654e326324a9c6647db44ffca2",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.46.0.0/sqlite-jdbc-3.46.0.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/xerial/sqlite-jdbc/3.46.0.0/sqlite-jdbc-3.46.0.0-sources.jar"
             }
           },
           "org_conscrypt_conscrypt_openjdk_uber_2_5_2": {
@@ -7153,6 +7577,17 @@
                 "https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/10.2/checkstyle-10.2.jar"
               ],
               "downloaded_file_path": "v1/com/puppycrawl/tools/checkstyle/10.2/checkstyle-10.2.jar"
+            }
+          },
+          "org_testcontainers_testcontainers_1_19_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "9186c04549a3dcab3e72cc4e4b1e58aefd7d4c1f226dc55178beb2308fe84645",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/testcontainers/testcontainers/1.19.8/testcontainers-1.19.8.jar"
+              ],
+              "downloaded_file_path": "v1/org/testcontainers/testcontainers/1.19.8/testcontainers-1.19.8.jar"
             }
           },
           "net_sourceforge_pmd_pmd_perl": {
@@ -7255,6 +7690,7 @@
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-simple\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-core\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-jdbc-client\", \"version\": \"4.5.8\" }",
+                "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-sql-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-launcher\", \"version\": \"1.10.2\" }",
                 "{ \"group\": \"org.junit.platform\", \"artifact\": \"junit-platform-reporting\", \"version\": \"1.10.2\" }",
@@ -7262,6 +7698,11 @@
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-api\", \"version\": \"5.10.2\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-params\", \"version\": \"5.10.2\" }",
                 "{ \"group\": \"org.junit.jupiter\", \"artifact\": \"junit-jupiter-engine\", \"version\": \"5.10.2\" }",
+                "{ \"group\": \"org.testcontainers\", \"artifact\": \"junit-jupiter\", \"version\": \"1.19.8\" }",
+                "{ \"group\": \"com.h2database\", \"artifact\": \"h2\", \"version\": \"2.2.224\" }",
+                "{ \"group\": \"org.xerial\", \"artifact\": \"sqlite-jdbc\", \"version\": \"3.46.0.0\" }",
+                "{ \"group\": \"com.mysql\", \"artifact\": \"mysql-connector-j\", \"version\": \"8.4.0\" }",
+                "{ \"group\": \"org.postgresql\", \"artifact\": \"postgresql\", \"version\": \"42.7.3\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
                 "{ \"group\": \"com.google.code.gson\", \"artifact\": \"gson\", \"version\": \"2.8.9\" }",
                 "{ \"group\": \"com.google.errorprone\", \"artifact\": \"error_prone_annotations\", \"version\": \"2.3.2\" }",
@@ -7603,6 +8044,17 @@
               "downloaded_file_path": "v1/com/google/api/grpc/proto-google-cloud-storage-v2/2.36.1-alpha/proto-google-cloud-storage-v2-2.36.1-alpha.jar"
             }
           },
+          "com_github_docker_java_docker_java_api_jar_javadoc_3_3_6": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "1e0bef74cb0cdeb9420106c934243bb440bca9b36ed2df1a99f6a50728ebcee8",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6-javadoc.jar"
+            }
+          },
           "io_grpc_grpc_stub_jar_sources_1_62_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7869,6 +8321,17 @@
                 "https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2-javadoc.jar"
               ],
               "downloaded_file_path": "v1/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2-javadoc.jar"
+            }
+          },
+          "org_postgresql_postgresql_jar_sources_42_7_3": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "225a85f725c96c32f68843b01eefb4bc1314584e486d1ec44ec506088be76210",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.3/postgresql-42.7.3-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/postgresql/postgresql/42.7.3/postgresql-42.7.3-sources.jar"
             }
           },
           "com_google_protobuf_protobuf_java_util_jar_sources_3_25_2": {

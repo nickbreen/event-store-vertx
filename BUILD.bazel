@@ -2,13 +2,13 @@ load("@rules_jvm_external//:defs.bzl", "artifact")
 load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_binary", "java_library", "java_test_suite")
 
 java_binary(
-    name = "main",
+    name = "uber",
     main_class = "kiwi.breen.event.store.vertx.Main",
-    runtime_deps = [":lib"],
+    runtime_deps = [":main"],
 )
 
 java_library(
-    name = "lib",
+    name = "main",
     srcs = glob(["src/main/java/**/*"]),
     resources = glob(["src/main/resources/**/*"]),
     runtime_deps = [
@@ -16,6 +16,19 @@ java_library(
     ],
     deps = [
         artifact("org.slf4j:slf4j-api"),
+        artifact("io.vertx:vertx-core"),
+        artifact("io.vertx:vertx-jdbc-client"),
+        artifact("io.vertx:vertx-sql-client"),
+    ],
+)
+
+java_library(
+    name = "test-support",
+    testonly = True,
+    srcs = glob(["src/test-support/java/**/*"]),
+    resources = glob(["src/test-support/resources/**/*"]),
+    deps = [
+        ":main",
         artifact("io.vertx:vertx-core"),
     ],
 )
@@ -29,9 +42,36 @@ java_test_suite(
     runner = "junit5",
     runtime_deps = JUNIT5_DEPS,
     deps = [
-        ":lib",
+        ":main",
+        ":test-support",
         artifact("io.vertx:vertx-core"),
         artifact("io.vertx:vertx-junit5"),
         artifact("org.junit.jupiter:junit-jupiter-api"),
+    ],
+)
+
+java_test_suite(
+    name = "integration-test",
+    size = "small",
+    srcs = glob(["src/integration-test/java/**/*"]),
+    package_prefixes = [".kiwi."],
+    resources = glob(["src/integration-test/resources/**/*"]),
+    runner = "junit5",
+    runtime_deps = JUNIT5_DEPS + [
+        artifact("com.h2database:h2"),
+        artifact("com.mysql:mysql-connector-j"),
+        artifact("org.postgresql:postgresql"),
+        artifact("org.xerial:sqlite-jdbc"),
+    ],
+    deps = [
+        ":main",
+        ":test-support",
+        artifact("io.vertx:vertx-core"),
+        artifact("io.vertx:vertx-junit5"),
+        artifact("io.vertx:vertx-jdbc-client"),
+        artifact("io.vertx:vertx-sql-client"),
+        artifact("org.junit.jupiter:junit-jupiter-api"),
+        artifact("org.junit.jupiter:junit-jupiter-params"),
+        artifact("org.testcontainers:junit-jupiter"),
     ],
 )

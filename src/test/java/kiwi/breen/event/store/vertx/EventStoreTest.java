@@ -13,11 +13,11 @@ import java.util.concurrent.ConcurrentSkipListMap;
 @ExtendWith(VertxExtension.class)
 class EventStoreTest
 {
-    public static final String TEST_ADDRESS = "test.address";
+    private static final String TEST_ADDRESS = "test.address";
+    private static final Instant time = Instant.now();
 
     private final ConcurrentSkipListMap<Long, EventStore.Event> store = new ConcurrentSkipListMap<>();
-    private final EventStore eventStore = new MapEventStore(store);
-    private final Instant time = Instant.now();
+    private final EventStore eventStore = new StubEventStore(store);
 
     @Test
     void shouldFailToStoreEventWithDuplicateSequence(final VertxTestContext context)
