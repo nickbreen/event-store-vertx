@@ -7,19 +7,26 @@ on:
       - README.md
 
 jobs:
+
   bazel:
-    name: Bazel Build & Test
+    name: Bazel
     runs-on: ubuntu-latest
     steps:
-      - name: Bazel Home RC
+      - name: Bazel RC
         run: |
-          echo "build --disk_cache=~/.cache/bazel.disk" >> ~/.bazelrc
-      - uses: actions/cache@v3
+          exec > ~/.bazelrc
+          echo "common --disk_cache=${{runner.temp}}/bazel.disk --remote_download_outputs=all"
+          echo "test --test_output=all"
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
         with:
-          path: ${{github.workspace}}/.cache/bazel.disk
-          key: bazel
-      - uses: actions/checkout@v3
-      - name: Bazel Build
-        run: bazel build ...
-      - name: Bazel Tests
+          path: ${{runner.temp}}/bazel.disk
+          key: bazel-${{ hashFiles('.bazelignore', '.bazelversion', '.bazelrc', 'WORKSPACE.bazel', 'MODULE.bazel', 'MODULE.bazel.lock', 'maven_install.json') }}
+          restore-keys: |
+            bazel-
+      - name: Bazel Test
         run: bazel test ...
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bazel-testlogs
+          path: bazel-testlogs/**
