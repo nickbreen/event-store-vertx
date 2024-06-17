@@ -1,5 +1,9 @@
 package kiwi.breen.event.store.vertx;
 
+import io.vertx.core.Future;
+import io.vertx.core.Promise;
+
+import java.util.Optional;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.function.Consumer;
@@ -19,9 +23,13 @@ public class MapEventStore implements EventStore
     }
 
     @Override
-    public void store(final Event event)
+    public Future<Void> store(final Event event)
     {
-        eventStore.put(event.sequence(), event);
+        final Promise<Void> promise = Promise.promise();
+        Optional.ofNullable(eventStore.putIfAbsent(event.sequence(), event))
+                .map(e -> "Event with sequence " + event.sequence() + " already exists")
+                .ifPresentOrElse(promise::fail, promise::complete);
+        return promise.future();
     }
 
     @Override

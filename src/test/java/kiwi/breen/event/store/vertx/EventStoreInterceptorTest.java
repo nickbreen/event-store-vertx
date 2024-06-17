@@ -34,18 +34,46 @@ public class EventStoreInterceptorTest
     private final ConcurrentSkipListMap<Long, EventStore.Event> store = new ConcurrentSkipListMap<>();
     private final EventStore eventStore = new MapEventStore(store);
     private final Instant time = Instant.now();
-    private final EventStoreInterceptor eventStoreInterceptor = new EventStoreInterceptor(eventStore);
+    private final EventStoreInterceptor eventStoreInterceptor = new EventStoreInterceptor(
+            eventStore,
+            SequenceInterceptor::extractSequence,
+            TimeStampInterceptor::extractTimestamp);
 
     record BodyAndHeader(JsonObject body, DeliveryOptions options)
     {
     }
 
     final List<BodyAndHeader> fixtures = List.of(
-            new BodyAndHeader(JsonObject.of("msg", "Hello World 10!"), new DeliveryOptions().addHeader("header", "value1").addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(1).toString()).addHeader(SequenceInterceptor.HEADER, "1")),
-            new BodyAndHeader(JsonObject.of("msg", "Hello World 20!"), new DeliveryOptions().addHeader("header", "value2").addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(2).toString()).addHeader(SequenceInterceptor.HEADER, "2")),
-            new BodyAndHeader(JsonObject.of("msg", "Hello World 30!"), new DeliveryOptions().addHeader("header", "value3").addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(3).toString()).addHeader(SequenceInterceptor.HEADER, "3")),
-            new BodyAndHeader(JsonObject.of("msg", "Hello World 40!"), new DeliveryOptions().addHeader("header", "value4").addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(4).toString()).addHeader(SequenceInterceptor.HEADER, "4")),
-            new BodyAndHeader(JsonObject.of("msg", "Hello World 50!"), new DeliveryOptions().addHeader("header", "value5").addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(5).toString()).addHeader(SequenceInterceptor.HEADER, "5")));
+            new BodyAndHeader(
+                    JsonObject.of("msg", "Hello World 10!"),
+                    new DeliveryOptions()
+                            .addHeader("header", "value1")
+                            .addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(1).toString())
+                            .addHeader(SequenceInterceptor.HEADER, "1")),
+            new BodyAndHeader(
+                    JsonObject.of("msg", "Hello World 20!"),
+                    new DeliveryOptions()
+                            .addHeader("header", "value2")
+                            .addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(2).toString())
+                            .addHeader(SequenceInterceptor.HEADER, "2")),
+            new BodyAndHeader(
+                    JsonObject.of("msg", "Hello World 30!"),
+                    new DeliveryOptions()
+                            .addHeader("header", "value3")
+                            .addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(3).toString())
+                            .addHeader(SequenceInterceptor.HEADER, "3")),
+            new BodyAndHeader(
+                    JsonObject.of("msg", "Hello World 40!"),
+                    new DeliveryOptions()
+                            .addHeader("header", "value4")
+                            .addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(4).toString())
+                            .addHeader(SequenceInterceptor.HEADER, "4")),
+            new BodyAndHeader(
+                    JsonObject.of("msg", "Hello World 50!"),
+                    new DeliveryOptions()
+                            .addHeader("header", "value5")
+                            .addHeader(TimeStampInterceptor.HEADER, time.plusSeconds(5).toString())
+                            .addHeader(SequenceInterceptor.HEADER, "5")));
 
     @BeforeEach
     void setUp(final Vertx vertx)
@@ -78,7 +106,10 @@ public class EventStoreInterceptorTest
 
         assertEquals(2, headers.size(), "Expected single entry for each header");
         assertEquals("value1", headers.get("header1"), "Expected to get the first value");
-        assertIterableEquals(List.of("value1", "value3", "value4"), headers.getAll("header1"), "Expected to get the all values in order");
+        assertIterableEquals(
+                List.of("value1", "value3", "value4"),
+                headers.getAll("header1"),
+                "Expected to get the all values in order");
         assertIterableEquals(
                 headers.entries().stream().map(Map.Entry::copyOf).toList(),
                 List.of(
@@ -100,7 +131,9 @@ public class EventStoreInterceptorTest
         EventStoreInterceptor.rebuildHeaders(jsonArray, rebuiltHeaders::add);
         // We can't compare the MultiMap directly, so we have to convert it to a list of entries first
         // We also can't compare the HeadersMultiMap entries directly, so we have to copy them to the JDK's equivalent first
-        assertIterableEquals(headers.entries().stream().map(Map.Entry::copyOf).toList(), rebuiltHeaders.entries().stream().map(Map.Entry::copyOf).toList());
+        assertIterableEquals(
+                headers.entries().stream().map(Map.Entry::copyOf).toList(),
+                rebuiltHeaders.entries().stream().map(Map.Entry::copyOf).toList());
     }
 
     @Test

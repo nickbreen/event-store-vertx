@@ -22,7 +22,10 @@ public class Main
         vertx.eventBus().addOutboundInterceptor(sequenceInterceptor);
 
         final EventStore eventStore = new MapEventStore();
-        final EventStoreInterceptor eventStoreInterceptor = new EventStoreInterceptor(eventStore);
+        final EventStoreInterceptor eventStoreInterceptor = new EventStoreInterceptor(
+                eventStore,
+                SequenceInterceptor::extractSequence,
+                TimeStampInterceptor::extractTimestamp);
         vertx.eventBus().addOutboundInterceptor(eventStoreInterceptor);
 
         vertx.deployVerticle(new EventStoreVerticle()).onComplete(
