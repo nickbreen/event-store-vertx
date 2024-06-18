@@ -9,12 +9,12 @@ import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class JdbcEventStoreTest
 {
     private static final String TEST_ADDRESS = "test.address";
-    private static final Instant time = Instant.now();
+    private static final Instant timeMillis = Instant.now().truncatedTo(ChronoUnit.MILLIS);
     private JDBCPool pool;
 
     @AfterEach
@@ -34,7 +34,7 @@ class JdbcEventStoreTest
         Optional.ofNullable(pool).ifPresent(JDBCPool::close);
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "{0} {displayName}")
     @ValueSource(strings = {"jdbc:sqlite::memory:", "jdbc:h2:mem:journal"})
     void apparentlyDatabaseMetadataIsNotSupported(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
     {
@@ -52,7 +52,7 @@ class JdbcEventStoreTest
         }));
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "{0} {displayName}")
     @ValueSource(strings = {"jdbc:sqlite::memory:journal", "jdbc:h2:mem:journal"})
     void shouldInitialiseTable(final String jdbcUri, final Vertx vertx, final VertxTestContext context) throws InterruptedException
     {
@@ -62,27 +62,29 @@ class JdbcEventStoreTest
 
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "{0} {displayName}")
     @ValueSource(strings = {"jdbc:sqlite::memory:journal", "jdbc:h2:mem:journal;DATABASE_TO_UPPER=false"})
     void shouldStoreEvent(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
     {
         pool = JDBCPool.pool(vertx, JsonObject.of("url", jdbcUri));
         final EventStore eventStore = JdbcEventStore.Factory.select(jdbcUri).create(pool).toCompletionStage().toCompletableFuture().join();
 
-        eventStore.store(1, time, TEST_ADDRESS, true, JsonObject.of(), JsonArray.of())
+        eventStore.store(1, timeMillis, TEST_ADDRESS, true, JsonObject.of(), JsonArray.of())
                 .onComplete(x -> context.completeNow(), context::failNow);
 
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "{0} {displayName}")
     @ValueSource(strings = {"jdbc:sqlite::memory:journal", "jdbc:h2:mem:journal;DATABASE_TO_UPPER=false"})
-    @Disabled("need to handle reading types")
+    @Timeout(1000)
     void shouldStoreEventAndReplayEvent(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
     {
         pool = JDBCPool.pool(vertx, JsonObject.of("url", jdbcUri));
         final EventStore eventStore = JdbcEventStore.Factory.select(jdbcUri).create(pool).toCompletionStage().toCompletableFuture().join();
 
-        eventStore.store(1, time, TEST_ADDRESS, true, JsonObject.of(), JsonArray.of())
+        final JsonObject body = JsonObject.of("foo", "bar");
+        final JsonArray headers = JsonArray.of(JsonObject.of("header", "value"));
+        eventStore.store(1, timeMillis, TEST_ADDRESS, true, body, headers)
                 .onFailure(context::failNow)
                 .toCompletionStage()
                 .toCompletableFuture()
@@ -91,11 +93,11 @@ class JdbcEventStoreTest
         final Checkpoint checkpoint = context.checkpoint(1);
         eventStore.replay(event -> context.verify(() -> {
             assertEquals(1, event.sequence());
-            assertEquals(time, event.timestamp());
+            assertEquals(timeMillis, event.timestamp());
             assertEquals(TEST_ADDRESS, event.address());
             assertTrue(event.send());
-            assertEquals(JsonObject.of(), event.body());
-            assertEquals(JsonArray.of(), event.headers());
+            assertEquals(body, event.body());
+            assertEquals(headers, event.headers());
             checkpoint.flag();
         }));
     }
