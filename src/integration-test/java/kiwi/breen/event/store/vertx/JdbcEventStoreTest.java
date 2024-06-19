@@ -35,7 +35,7 @@ class JdbcEventStoreTest
     }
 
     @ParameterizedTest(name = "{0} {displayName}")
-    @ValueSource(strings = {"jdbc:sqlite::memory:", "jdbc:h2:mem:journal"})
+    @ValueSource(strings = {"jdbc:sqlite::memory:", "jdbc:h2:mem:"})
     void apparentlyDatabaseMetadataIsNotSupported(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
     {
         pool = JDBCPool.pool(vertx, JsonObject.of("url", jdbcUri));
@@ -53,8 +53,8 @@ class JdbcEventStoreTest
     }
 
     @ParameterizedTest(name = "{0} {displayName}")
-    @ValueSource(strings = {"jdbc:sqlite::memory:journal", "jdbc:h2:mem:journal"})
-    void shouldInitialiseTable(final String jdbcUri, final Vertx vertx, final VertxTestContext context) throws InterruptedException
+    @ValueSource(strings = {"jdbc:sqlite::memory:", "jdbc:h2:mem:"})
+    void shouldInitialiseTable(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
     {
         pool = JDBCPool.pool(vertx, JsonObject.of("url", jdbcUri));
         JdbcEventStore.Factory.select(jdbcUri).create(pool)
@@ -63,7 +63,7 @@ class JdbcEventStoreTest
     }
 
     @ParameterizedTest(name = "{0} {displayName}")
-    @ValueSource(strings = {"jdbc:sqlite::memory:journal", "jdbc:h2:mem:journal;DATABASE_TO_UPPER=false"})
+    @ValueSource(strings = {"jdbc:sqlite::memory:", "jdbc:h2:mem:"})
     void shouldStoreEvent(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
     {
         pool = JDBCPool.pool(vertx, JsonObject.of("url", jdbcUri));
@@ -75,7 +75,7 @@ class JdbcEventStoreTest
     }
 
     @ParameterizedTest(name = "{0} {displayName}")
-    @ValueSource(strings = {"jdbc:sqlite::memory:journal", "jdbc:h2:mem:journal;DATABASE_TO_UPPER=false"})
+    @ValueSource(strings = {"jdbc:sqlite::memory:", "jdbc:h2:mem:;DATABASE_TO_UPPER=false"})
     @Timeout(1000)
     void shouldStoreEventAndReplayEvent(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
     {
