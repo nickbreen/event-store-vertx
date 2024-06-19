@@ -28,6 +28,8 @@ maven.install(
         "org.xerial:sqlite-jdbc:3.46.0.0",
         "com.mysql:mysql-connector-j:8.4.0",
         "org.postgresql:postgresql:42.7.3",
+        "io.agroal:agroal-api:2.4",
+        "io.agroal:agroal-pool:2.4",
     ],
     excluded_artifacts = [
         "com.google.guava:guava",

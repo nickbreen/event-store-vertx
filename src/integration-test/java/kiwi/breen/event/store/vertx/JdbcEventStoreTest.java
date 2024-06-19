@@ -3,11 +3,13 @@ package kiwi.breen.event.store.vertx;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.jdbcclient.JDBCConnectOptions;
 import io.vertx.jdbcclient.JDBCPool;
 import io.vertx.junit5.Checkpoint;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
+import io.vertx.sqlclient.PoolOptions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -36,9 +38,27 @@ class JdbcEventStoreTest
 
     @ParameterizedTest(name = "{0} {displayName}")
     @ValueSource(strings = {"jdbc:sqlite::memory:", "jdbc:h2:mem:"})
-    void apparentlyDatabaseMetadataIsNotSupported(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
+    void apparentlyDatabaseMetadataIsNotSupportedWithC3P0Pool(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
     {
         pool = JDBCPool.pool(vertx, JsonObject.of("url", jdbcUri));
+        pool.getConnection(context.succeeding(con -> {
+            try
+            {
+                con.databaseMetadata();
+                context.failNow("Expected Database metadata to be not supported");
+            }
+            catch (final UnsupportedOperationException e)
+            {
+                context.completeNow();
+            }
+        }));
+    }
+
+    @ParameterizedTest(name = "{0} {displayName}")
+    @ValueSource(strings = {"jdbc:sqlite::memory:", "jdbc:h2:mem:"})
+    void apparentlyDatabaseMetadataIsNotSupportedWithAgroalPool(final String jdbcUri, final Vertx vertx, final VertxTestContext context)
+    {
+        pool = JDBCPool.pool(vertx, new JDBCConnectOptions().setJdbcUrl(jdbcUri), new PoolOptions());
         pool.getConnection(context.succeeding(con -> {
             try
             {

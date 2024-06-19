@@ -476,10 +476,10 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "Pq3YnJEflPAALx/UMykUnN3aA5bve0fNm/cuLvt/zvI=",
-        "usagesDigest": "vF4GziR4maWF7ec71546EijiJ6llQ86Yi8CyO6FJTNQ=",
+        "usagesDigest": "glHwaLF9ajfT+4Ula154QpYHPlmjlFFco45H7UrzwVc=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8",
-          "@@//maven_install.json": "6ee9e6efd8efa6f52fb3631017380dd8464b24e1d4279e0b851050dbdace5873",
+          "@@//maven_install.json": "799ff4721d5a18d01d71caad91bd1712a911b8ef348963f35ef37af7c4266ff4",
           "@@contrib_rules_jvm~//contrib_rules_jvm_deps_install.json": "c65d8722c471d3b75be39f94e3c4a6ce19c4e377e96cb9b28746ac559f6267de"
         },
         "recordedDirentsInputs": {},
@@ -1428,6 +1428,17 @@
               "downloaded_file_path": "v1/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8-sources.jar"
             }
           },
+          "io_agroal_agroal_pool_jar_sources_2_4": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "71d7b9e3d49e84ebde091fa327bbebc07f8939167e64b9569b38a5e895f4e11b",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/agroal/agroal-pool/2.4/agroal-pool-2.4-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/agroal/agroal-pool/2.4/agroal-pool-2.4-sources.jar"
+            }
+          },
           "net_sourceforge_saxon_saxon_dom": {
             "bzlFile": "@@rules_jvm_external~//private:compat_repository.bzl",
             "ruleClassName": "compat_repository",
@@ -2175,6 +2186,17 @@
               "downloaded_file_path": "v1/com/google/http-client/google-http-client-apache-v2/1.44.1/google-http-client-apache-v2-1.44.1.jar"
             }
           },
+          "io_agroal_agroal_api_jar_sources_2_4": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "02c424b6ae8136b8284613d12e571e58a7a7475e7eb4e3645f78f3b6ca70e13e",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/agroal/agroal-api/2.4/agroal-api-2.4-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/agroal/agroal-api/2.4/agroal-api-2.4-sources.jar"
+            }
+          },
           "com_mysql_mysql_connector_j_jar_sources_8_4_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -2506,6 +2528,17 @@
                 "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-reporting/1.10.2/junit-platform-reporting-1.10.2.jar"
               ],
               "downloaded_file_path": "v1/org/junit/platform/junit-platform-reporting/1.10.2/junit-platform-reporting-1.10.2.jar"
+            }
+          },
+          "io_agroal_agroal_pool_2_4": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "52b3f9b24dea97a01a3a383a8c19663d9ad725199d208aaf648673d94aa32bb9",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/agroal/agroal-pool/2.4/agroal-pool-2.4.jar"
+              ],
+              "downloaded_file_path": "v1/io/agroal/agroal-pool/2.4/agroal-pool-2.4.jar"
             }
           },
           "net_sourceforge_pmd_pmd_groovy_6_46_0": {
@@ -4101,6 +4134,17 @@
               "downloaded_file_path": "v1/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3-javadoc.jar"
             }
           },
+          "io_agroal_agroal_pool_jar_javadoc_2_4": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "53807be852beec58bd1539c37cddf7ad1d33160f1c38b54b640ea7867844b12e",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/agroal/agroal-pool/2.4/agroal-pool-2.4-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/agroal/agroal-pool/2.4/agroal-pool-2.4-javadoc.jar"
+            }
+          },
           "io_netty_netty_buffer_4_1_87_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5042,6 +5086,8 @@
                 "{ \"group\": \"org.xerial\", \"artifact\": \"sqlite-jdbc\", \"version\": \"3.46.0.0\" }",
                 "{ \"group\": \"com.mysql\", \"artifact\": \"mysql-connector-j\", \"version\": \"8.4.0\" }",
                 "{ \"group\": \"org.postgresql\", \"artifact\": \"postgresql\", \"version\": \"42.7.3\" }",
+                "{ \"group\": \"io.agroal\", \"artifact\": \"agroal-api\", \"version\": \"2.4\" }",
+                "{ \"group\": \"io.agroal\", \"artifact\": \"agroal-pool\", \"version\": \"2.4\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
                 "{ \"group\": \"com.google.code.gson\", \"artifact\": \"gson\", \"version\": \"2.8.9\" }",
                 "{ \"group\": \"com.google.errorprone\", \"artifact\": \"error_prone_annotations\", \"version\": \"2.3.2\" }",
@@ -5259,6 +5305,17 @@
                 "https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2-javadoc.jar"
               ],
               "downloaded_file_path": "v1/junit/junit/4.13.2/junit-4.13.2-javadoc.jar"
+            }
+          },
+          "io_agroal_agroal_api_2_4": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "98ec3de772b843f7be8c89e8411d82de12bdf8058f444162538ec357647ad7e6",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/agroal/agroal-api/2.4/agroal-api-2.4.jar"
+              ],
+              "downloaded_file_path": "v1/io/agroal/agroal-api/2.4/agroal-api-2.4.jar"
             }
           },
           "io_opencensus_opencensus_contrib_grpc_metrics_0_24_0": {
@@ -5752,6 +5809,17 @@
                 "https://repo1.maven.org/maven2/com/google/http-client/google-http-client-appengine/1.44.1/google-http-client-appengine-1.44.1-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/http-client/google-http-client-appengine/1.44.1/google-http-client-appengine-1.44.1-sources.jar"
+            }
+          },
+          "io_agroal_agroal_api_jar_javadoc_2_4": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "ea77ac083523459aa68196588ff2df6d15734546eb8d6be663c1c932864a3868",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/agroal/agroal-api/2.4/agroal-api-2.4-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/agroal/agroal-api/2.4/agroal-api-2.4-javadoc.jar"
             }
           },
           "io_opentelemetry_opentelemetry_api_1_36_0": {
@@ -7703,6 +7771,8 @@
                 "{ \"group\": \"org.xerial\", \"artifact\": \"sqlite-jdbc\", \"version\": \"3.46.0.0\" }",
                 "{ \"group\": \"com.mysql\", \"artifact\": \"mysql-connector-j\", \"version\": \"8.4.0\" }",
                 "{ \"group\": \"org.postgresql\", \"artifact\": \"postgresql\", \"version\": \"42.7.3\" }",
+                "{ \"group\": \"io.agroal\", \"artifact\": \"agroal-api\", \"version\": \"2.4\" }",
+                "{ \"group\": \"io.agroal\", \"artifact\": \"agroal-pool\", \"version\": \"2.4\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
                 "{ \"group\": \"com.google.code.gson\", \"artifact\": \"gson\", \"version\": \"2.8.9\" }",
                 "{ \"group\": \"com.google.errorprone\", \"artifact\": \"error_prone_annotations\", \"version\": \"2.3.2\" }",

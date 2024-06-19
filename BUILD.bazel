@@ -62,6 +62,8 @@ java_test_suite(
         artifact("com.mysql:mysql-connector-j"),
         artifact("org.postgresql:postgresql"),
         artifact("org.xerial:sqlite-jdbc"),
+        artifact("io.agroal:agroal-api"),
+        artifact("io.agroal:agroal-pool"),
     ],
     deps = [
         ":main",
