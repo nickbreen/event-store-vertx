@@ -1,6 +1,7 @@
 package kiwi.breen.event.store.vertx;
 
 import io.vertx.core.Vertx;
+import io.vertx.core.json.JsonObject;
 import org.slf4j.Logger;
 
 import java.time.Instant;
@@ -26,7 +27,12 @@ public class Main
                 eventStore,
                 SequenceInterceptor::extractSequence,
                 TimeStampInterceptor::extractTimestamp);
-        vertx.eventBus().addOutboundInterceptor(eventStoreInterceptor);
+
+        final ConditionalInterceptor<JsonObject> eventPrefixInterceptor = new ConditionalInterceptor<>(
+                deliveryContext -> deliveryContext.message().address().startsWith("event."),
+                eventStoreInterceptor);
+
+        vertx.eventBus().addOutboundInterceptor(eventPrefixInterceptor);
 
         vertx.deployVerticle(new EventStoreVerticle()).onComplete(
                 x -> LOGGER.info("Verticle started {}", x),
