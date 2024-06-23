@@ -12,6 +12,8 @@ maven.install(
         "org.slf4j:slf4j-simple:2.0.13",
         # Vertx
         "io.vertx:vertx-core:4.5.8",
+        "io.vertx:vertx-dropwizard-metrics:4.5.8",
+        "io.vertx:vertx-health-check:4.5.8",
         "io.vertx:vertx-jdbc-client:4.5.8",
         "io.vertx:vertx-sql-client:4.5.8",
         "io.vertx:vertx-junit5:4.5.8",

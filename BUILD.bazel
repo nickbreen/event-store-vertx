@@ -4,7 +4,10 @@ load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_binary", "java_li
 java_binary(
     name = "uber",
     main_class = "kiwi.breen.event.store.vertx.Main",
-    runtime_deps = [":main"],
+    runtime_deps = [
+        ":main",
+        artifact("org.xerial:sqlite-jdbc"),
+    ],
 )
 
 java_library(
@@ -17,6 +20,8 @@ java_library(
     deps = [
         artifact("org.slf4j:slf4j-api"),
         artifact("io.vertx:vertx-core"),
+        artifact("io.vertx:vertx-dropwizard-metrics"),
+        artifact("io.vertx:vertx-health-check"),
         artifact("io.vertx:vertx-jdbc-client"),
         artifact("io.vertx:vertx-sql-client"),
     ],

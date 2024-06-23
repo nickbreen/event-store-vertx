@@ -26,17 +26,17 @@ public class JdbcEventStore implements EventStore
     {
         SQLITE(
                 Pattern.compile("^jdbc:(?:tc:)?sqlite:"),
-                "CREATE TABLE journal (sequence BIGINT PRIMARY KEY, timestamp VARCHAR, address VARCHAR, send INTEGER, body VARCHAR, headers VARCHAR)", // ? IF NOT EXISTS?
+                "CREATE TABLE IF NOT EXISTS journal (sequence BIGINT PRIMARY KEY, timestamp VARCHAR, address VARCHAR, send INTEGER, body VARCHAR, headers VARCHAR)",
                 "INSERT INTO journal (sequence, timestamp, address, send, body, headers) VALUES (?, ?, ?, ?, ?, ?)",
                 "SELECT * FROM journal"),
         H2(
                 Pattern.compile("^jdbc:(?:tc:)?h2:"),
-                "CREATE TABLE journal (sequence BIGINT PRIMARY KEY, timestamp TIMESTAMP WITH TIME ZONE, address VARCHAR, send BOOLEAN, body VARCHAR, headers VARCHAR)", // ? IF NOT EXISTS?
+                "CREATE TABLE IF NOT EXISTS journal (sequence BIGINT PRIMARY KEY, timestamp TIMESTAMP WITH TIME ZONE, address VARCHAR, send BOOLEAN, body VARCHAR, headers VARCHAR)",
                 "INSERT INTO journal (sequence, timestamp, address, send, body, headers) VALUES (?, ?, ?, ?, ?, ?)",
                 "SELECT * FROM journal"),
         OTHER(
                 Pattern.compile("^jdbc:(?:tc:)?"),
-                "CREATE TABLE journal (sequence BIGINT PRIMARY KEY, timestamp TIMESTAMP, address VARCHAR, send BOOLEAN, body VARCHAR, headers VARCHAR)", // ? IF NOT EXISTS?
+                "CREATE TABLE IF NOT EXISTS journal (sequence BIGINT PRIMARY KEY, timestamp TIMESTAMP, address VARCHAR, send BOOLEAN, body VARCHAR, headers VARCHAR)",
                 "INSERT INTO journal (sequence, timestamp, address, send, body, headers) VALUES (?, ?, ?, ?, ?, ?)",
                 "SELECT * FROM journal");
 
@@ -71,29 +71,33 @@ public class JdbcEventStore implements EventStore
 
     private final JDBCPool pool;
     private final String insertDml;
-    private final String selectDml;
+    private final String selectSql;
     private final BiFunction<Row, Map<String, JDBCType>, Event> rowMapper = JdbcEventStore::rowMapper;
     private final Function<Event, Tuple> parameterMapper = JdbcEventStore::parameterMapper;
 
-    protected JdbcEventStore(final JDBCPool pool, final String insertDml, final String selectDml)
+    protected JdbcEventStore(final JDBCPool pool, final String insertDml, final String selectSql)
     {
         this.pool = pool;
         this.insertDml = insertDml;
-        this.selectDml = selectDml;
+        this.selectSql = selectSql;
     }
+
 
     @Override
     public Future<Void> store(final Event event)
     {
-        return pool.preparedQuery(insertDml)
-                .execute(parameterMapper.apply(event))
-                .mapEmpty();
+        synchronized (pool)
+        {
+            return pool.preparedQuery(insertDml)
+                    .execute(parameterMapper.apply(event))
+                    .mapEmpty();
+        }
     }
 
     @Override
     public void replay(final Consumer<Event> consumer)
     {
-        pool.query(selectDml).execute().onSuccess(rows -> {
+        pool.query(selectSql).execute().onSuccess(rows -> {
             final Map<String, JDBCType> columnJdbcType = rows.columnDescriptors().stream().collect(Collectors.toMap(ColumnDescriptor::name, ColumnDescriptor::jdbcType));
             rows.forEach(row -> consumer.accept(rowMapper.apply(row, columnJdbcType)));
         });

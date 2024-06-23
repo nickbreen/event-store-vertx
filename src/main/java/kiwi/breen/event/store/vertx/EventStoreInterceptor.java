@@ -42,7 +42,7 @@ public class EventStoreInterceptor implements Handler<DeliveryContext<JsonObject
         final JsonArray headers = jsonifyHeadersPreservingDuplicates(message.headers());
 
         store.store(sequence, timestamp, message.address(), context.send(), message.body(), headers)
-                .onFailure(failure -> LOGGER.error("Failed to store event", failure))
+                .onFailure(failure -> LOGGER.error("Failed to store event {}", this, failure))
                 .onComplete(v -> context.next());
     }
 

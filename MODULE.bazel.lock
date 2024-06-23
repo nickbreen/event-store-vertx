@@ -476,10 +476,10 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "Pq3YnJEflPAALx/UMykUnN3aA5bve0fNm/cuLvt/zvI=",
-        "usagesDigest": "glHwaLF9ajfT+4Ula154QpYHPlmjlFFco45H7UrzwVc=",
+        "usagesDigest": "CsHUdP18z0CWvUntTAPBDYdggl8YudTct5djInVbpdw=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8",
-          "@@//maven_install.json": "799ff4721d5a18d01d71caad91bd1712a911b8ef348963f35ef37af7c4266ff4",
+          "@@//maven_install.json": "72d3968ee5a782c13950f56dc454925f24b11d9736d60170eda3528aed20e6b9",
           "@@contrib_rules_jvm~//contrib_rules_jvm_deps_install.json": "c65d8722c471d3b75be39f94e3c4a6ce19c4e377e96cb9b28746ac559f6267de"
         },
         "recordedDirentsInputs": {},
@@ -1832,6 +1832,17 @@
               "downloaded_file_path": "v1/junit/junit/4.13.2/junit-4.13.2.jar"
             }
           },
+          "io_vertx_vertx_web_common_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "32117ab45f7d2a925edad6e28460c71f592a81a8be3e686a0d169c41bd726426",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-web-common/4.5.8/vertx-web-common-4.5.8.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-web-common/4.5.8/vertx-web-common-4.5.8.jar"
+            }
+          },
           "com_google_errorprone_error_prone_annotations_jar_javadoc_2_11_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -1854,6 +1865,17 @@
               "downloaded_file_path": "v1/io/netty/netty-common/4.1.108.Final/netty-common-4.1.108.Final-sources.jar"
             }
           },
+          "io_vertx_vertx_auth_common_jar_sources_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "fb8be2ccd4d3e7160484489c4552f281565a7c737b383a492b6ca0e09c0819f5",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-auth-common/4.5.8/vertx-auth-common-4.5.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-auth-common/4.5.8/vertx-auth-common-4.5.8-sources.jar"
+            }
+          },
           "org_codehaus_plexus_plexus_component_annotations_2_1_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -1863,6 +1885,17 @@
                 "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.1.0/plexus-component-annotations-2.1.0.jar"
               ],
               "downloaded_file_path": "v1/org/codehaus/plexus/plexus-component-annotations/2.1.0/plexus-component-annotations-2.1.0.jar"
+            }
+          },
+          "io_vertx_vertx_auth_common_jar_javadoc_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "aab1c0550a0680ece4c0ebd4bd1a0f0a8d2b825e31ada46f81c338a74a45a7b2",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-auth-common/4.5.8/vertx-auth-common-4.5.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-auth-common/4.5.8/vertx-auth-common-4.5.8-javadoc.jar"
             }
           },
           "org_junit_platform_junit_platform_launcher_jar_javadoc_1_10_2": {
@@ -2361,6 +2394,17 @@
               "target_name": "commons_beanutils_commons_beanutils"
             }
           },
+          "io_vertx_vertx_health_check_jar_javadoc_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "131823d341501029e70b45f14e5b0079c00347079dbf18a3722df1173579e664",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-health-check/4.5.8/vertx-health-check-4.5.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-health-check/4.5.8/vertx-health-check-4.5.8-javadoc.jar"
+            }
+          },
           "io_opencensus_opencensus_api_0_31_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -2579,6 +2623,17 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/profiles/2.25.23/profiles-2.25.23.jar"
             }
           },
+          "io_vertx_vertx_dropwizard_metrics_jar_sources_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "4dfa2fd17ddfcd83026ae4ca6af59a87c9c7ada5accffcaf4e7592921fb801de",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-dropwizard-metrics/4.5.8/vertx-dropwizard-metrics-4.5.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-dropwizard-metrics/4.5.8/vertx-dropwizard-metrics-4.5.8-sources.jar"
+            }
+          },
           "org_apache_maven_maven_artifact_3_9_6": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -2705,6 +2760,17 @@
                 "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0-sources.jar"
               ],
               "downloaded_file_path": "v1/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0-sources.jar"
+            }
+          },
+          "io_vertx_vertx_dropwizard_metrics_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "33b908d9c2e9f2b7216e0ea4a2fd3a4cde16552b3d8293a9fb0ea334bfdcbaa9",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-dropwizard-metrics/4.5.8/vertx-dropwizard-metrics-4.5.8.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-dropwizard-metrics/4.5.8/vertx-dropwizard-metrics-4.5.8.jar"
             }
           },
           "org_junit_jupiter_junit_jupiter_params_jar_sources_5_10_2": {
@@ -4016,6 +4082,17 @@
               "downloaded_file_path": "v1/com/google/api/gax-httpjson/2.46.1/gax-httpjson-2.46.1.jar"
             }
           },
+          "io_vertx_vertx_health_check_jar_sources_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "86564ac40a5123529e5923c1ee401b5129ea9ecb334290b2ebd180a9b7c6d3a0",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-health-check/4.5.8/vertx-health-check-4.5.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-health-check/4.5.8/vertx-health-check-4.5.8-sources.jar"
+            }
+          },
           "io_grpc_grpc_protobuf": {
             "bzlFile": "@@rules_jvm_external~//private:compat_repository.bzl",
             "ruleClassName": "compat_repository",
@@ -4463,6 +4540,17 @@
               "downloaded_file_path": "v1/com/squareup/okhttp/okhttp/2.7.5/okhttp-2.7.5.jar"
             }
           },
+          "io_dropwizard_metrics_metrics_core_4_2_15": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d6da099ba1b38378eaf01490623fa570d6be1b6ddd52f1368120de67416d21fc",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/4.2.15/metrics-core-4.2.15.jar"
+              ],
+              "downloaded_file_path": "v1/io/dropwizard/metrics/metrics-core/4.2.15/metrics-core-4.2.15.jar"
+            }
+          },
           "com_google_api_grpc_proto_google_iam_v1_1_32_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4483,6 +4571,17 @@
                 "https://repo1.maven.org/maven2/io/netty/netty-resolver/4.1.87.Final/netty-resolver-4.1.87.Final.jar"
               ],
               "downloaded_file_path": "v1/io/netty/netty-resolver/4.1.87.Final/netty-resolver-4.1.87.Final.jar"
+            }
+          },
+          "io_dropwizard_metrics_metrics_core_jar_javadoc_4_2_15": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "1d996293c5ea0113fc39e8820a40a9a1ec07e8ba0e49eaa03b762fa71f65ec41",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/4.2.15/metrics-core-4.2.15-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/dropwizard/metrics/metrics-core/4.2.15/metrics-core-4.2.15-javadoc.jar"
             }
           },
           "net_sourceforge_pmd_pmd_python_6_46_0": {
@@ -4762,6 +4861,17 @@
             "attributes": {
               "generating_repository": "contrib_rules_jvm_deps",
               "target_name": "io_netty_netty_tcnative_boringssl_static_windows_x86_64"
+            }
+          },
+          "io_vertx_vertx_web_jar_sources_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "3eb71dc1951b398a4490035cabcd07fc4764990fdd7e8dd68bed345cf6b81f19",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-web/4.5.8/vertx-web-4.5.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-web/4.5.8/vertx-web-4.5.8-sources.jar"
             }
           },
           "org_reflections_reflections_0_10_2": {
@@ -5072,6 +5182,8 @@
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-simple\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-core\", \"version\": \"4.5.8\" }",
+                "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-dropwizard-metrics\", \"version\": \"4.5.8\" }",
+                "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-health-check\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-jdbc-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-sql-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
@@ -5645,6 +5757,17 @@
                 "https://repo1.maven.org/maven2/com/beust/jcommander/1.48/jcommander-1.48.jar"
               ],
               "downloaded_file_path": "v1/com/beust/jcommander/1.48/jcommander-1.48.jar"
+            }
+          },
+          "io_vertx_vertx_health_check_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "58c352e7a77e44aef76526d8a966851299d4b24966c21e6295dccca4c6187f12",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-health-check/4.5.8/vertx-health-check-4.5.8.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-health-check/4.5.8/vertx-health-check-4.5.8.jar"
             }
           },
           "org_threeten_threetenbp_jar_sources_1_6_8": {
@@ -6234,6 +6357,17 @@
               "downloaded_file_path": "v1/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0-sources.jar"
             }
           },
+          "io_vertx_vertx_web_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "17c989751f4abbaa3bdb155b8ea09fba6fd3d01a42da67f2b091f3e05fee7f82",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-web/4.5.8/vertx-web-4.5.8.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-web/4.5.8/vertx-web-4.5.8.jar"
+            }
+          },
           "com_google_api_gax_2_46_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6336,6 +6470,17 @@
             "attributes": {
               "generating_repository": "contrib_rules_jvm_deps",
               "target_name": "org_antlr_antlr4_runtime"
+            }
+          },
+          "io_vertx_vertx_dropwizard_metrics_jar_javadoc_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "668917b0ec04f6aa08dfa1a2c2f7db3b448063163958f366b098808a7813f6ac",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-dropwizard-metrics/4.5.8/vertx-dropwizard-metrics-4.5.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-dropwizard-metrics/4.5.8/vertx-dropwizard-metrics-4.5.8-javadoc.jar"
             }
           },
           "com_google_api_grpc_proto_google_common_protos_jar_sources_2_37_1": {
@@ -6889,6 +7034,17 @@
               "downloaded_file_path": "v1/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14-sources.jar"
             }
           },
+          "io_vertx_vertx_web_jar_javadoc_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "b279ab9ebe7b84c92477763da002638e0ba98a2db7b941686367a4931b26bb0c",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-web/4.5.8/vertx-web-4.5.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-web/4.5.8/vertx-web-4.5.8-javadoc.jar"
+            }
+          },
           "com_google_j2objc_j2objc_annotations_jar_sources_3_0_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6942,6 +7098,17 @@
                 "https://repo1.maven.org/maven2/software/amazon/awssdk/protocol-core/2.25.23/protocol-core-2.25.23-sources.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/awssdk/protocol-core/2.25.23/protocol-core-2.25.23-sources.jar"
+            }
+          },
+          "io_dropwizard_metrics_metrics_core_jar_sources_4_2_15": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "cb65b30293ca0e7ec480bd699921a473e161a61e840df91abb30e39be2d33394",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/4.2.15/metrics-core-4.2.15-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/dropwizard/metrics/metrics-core/4.2.15/metrics-core-4.2.15-sources.jar"
             }
           },
           "com_google_cloud_google_cloud_core_http_jar_sources_2_36_1": {
@@ -7049,6 +7216,17 @@
                 "https://repo1.maven.org/maven2/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6-javadoc.jar"
               ],
               "downloaded_file_path": "v1/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6-javadoc.jar"
+            }
+          },
+          "io_vertx_vertx_web_common_jar_javadoc_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "58654e753a2069ebd44345d017c1b3f22b63d7a0a89268ed492a2de19641ff0b",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-web-common/4.5.8/vertx-web-common-4.5.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-web-common/4.5.8/vertx-web-common-4.5.8-javadoc.jar"
             }
           },
           "org_slf4j_jul_to_slf4j_2_0_12": {
@@ -7469,6 +7647,17 @@
               "target_name": "io_netty_netty_tcnative_boringssl_static_linux_x86_64"
             }
           },
+          "io_vertx_vertx_bridge_common_jar_javadoc_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "3456dd894303d3ad25b8a204c1600663a784d6c9c67c8988c6910a13f53c7dda",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-bridge-common/4.5.8/vertx-bridge-common-4.5.8-javadoc.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-bridge-common/4.5.8/vertx-bridge-common-4.5.8-javadoc.jar"
+            }
+          },
           "org_apache_maven_maven_builder_support_jar_sources_3_9_6": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7519,6 +7708,17 @@
                 "https://repo1.maven.org/maven2/org/xmlresolver/xmlresolver/4.2.0/xmlresolver-4.2.0.jar"
               ],
               "downloaded_file_path": "v1/org/xmlresolver/xmlresolver/4.2.0/xmlresolver-4.2.0.jar"
+            }
+          },
+          "io_vertx_vertx_web_common_jar_sources_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "b228b4c62f808953d07f50e8c910d00276e2a44d842f01de731345f31cb2e0a8",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-web-common/4.5.8/vertx-web-common-4.5.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-web-common/4.5.8/vertx-web-common-4.5.8-sources.jar"
             }
           },
           "software_amazon_awssdk_third_party_jackson_core_jar_sources_2_25_23": {
@@ -7699,6 +7899,17 @@
               "downloaded_file_path": "v1/junit/junit/4.13.2/junit-4.13.2-sources.jar"
             }
           },
+          "io_vertx_vertx_bridge_common_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d1aee4bb4dda29c099b4811efc31e674ec5b28282f21fb02298ff1affc22a9b3",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-bridge-common/4.5.8/vertx-bridge-common-4.5.8.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-bridge-common/4.5.8/vertx-bridge-common-4.5.8.jar"
+            }
+          },
           "io_grpc_grpc_protobuf_lite_1_62_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7757,6 +7968,8 @@
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-simple\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-core\", \"version\": \"4.5.8\" }",
+                "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-dropwizard-metrics\", \"version\": \"4.5.8\" }",
+                "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-health-check\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-jdbc-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-sql-client\", \"version\": \"4.5.8\" }",
                 "{ \"group\": \"io.vertx\", \"artifact\": \"vertx-junit5\", \"version\": \"4.5.8\" }",
@@ -8240,6 +8453,17 @@
               "downloaded_file_path": "v1/io/grpc/grpc-xds/1.62.2/grpc-xds-1.62.2-sources.jar"
             }
           },
+          "io_vertx_vertx_bridge_common_jar_sources_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a6047201a5addf747bae7de1f2024edcc4a2590d0874aa888b58ba33c4fff3bd",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-bridge-common/4.5.8/vertx-bridge-common-4.5.8-sources.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-bridge-common/4.5.8/vertx-bridge-common-4.5.8-sources.jar"
+            }
+          },
           "org_junit_platform_junit_platform_commons_1_8_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -8260,6 +8484,17 @@
                 "https://repo1.maven.org/maven2/com/google/auto/value/auto-value-annotations/1.9/auto-value-annotations-1.9.jar"
               ],
               "downloaded_file_path": "v1/com/google/auto/value/auto-value-annotations/1.9/auto-value-annotations-1.9.jar"
+            }
+          },
+          "io_vertx_vertx_auth_common_4_5_8": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "ba3eb6a1bf371b2f7f2aaad50541ae725a386f69bf4087b827218c956b1ecedf",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/vertx/vertx-auth-common/4.5.8/vertx-auth-common-4.5.8.jar"
+              ],
+              "downloaded_file_path": "v1/io/vertx/vertx-auth-common/4.5.8/vertx-auth-common-4.5.8.jar"
             }
           },
           "commons_logging_commons_logging": {
