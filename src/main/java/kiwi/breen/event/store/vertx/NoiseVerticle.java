@@ -23,11 +23,10 @@ public class NoiseVerticle extends AbstractVerticle
     public void start()
     {
         final MessageProducer<JsonObject> sender = vertx.eventBus().<JsonObject>sender(address).deliveryOptions(new DeliveryOptions().addHeader("x-origin", context.deploymentID()));
-        vertx.eventBus().consumer(address, message -> {}); // just consume our messages
         vertx.executeBlocking(() -> this.noise(sender))
                 .onSuccess(i -> LOGGER.info("Sent {} messages", i))
-                .onFailure(cause -> LOGGER.error("Failed to send messages", cause));
-
+                .onFailure(cause -> LOGGER.error("Failed to send messages", cause))
+                .onComplete(x -> vertx.undeploy(this.deploymentID()));
     }
 
     private int noise(final MessageProducer<JsonObject> sender)
@@ -35,6 +34,7 @@ public class NoiseVerticle extends AbstractVerticle
         for (int i = 0; i < count; i++)
         {
             sender.write(JsonObject.of("i", i))
+                    .onSuccess(v -> LOGGER.debug("Sent message"))
                     .onFailure(cause -> LOGGER.error("Failed to send message", cause));
         }
         return count;

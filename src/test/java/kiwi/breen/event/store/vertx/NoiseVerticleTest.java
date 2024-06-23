@@ -2,6 +2,7 @@ package kiwi.breen.event.store.vertx;
 
 import io.vertx.core.Vertx;
 import io.vertx.junit5.Checkpoint;
+import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ public class NoiseVerticleTest
     }
 
     @Test
+//    @Timeout(1000)
     public void shouldBeNoisy(final Vertx vertx, final VertxTestContext testContext)
     {
         final Checkpoint messagesSent = testContext.checkpoint(20);
@@ -27,6 +29,7 @@ public class NoiseVerticleTest
     }
 
     @Test
+    @Timeout(1000)
     public void shouldBeExtraNoisy(final Vertx vertx, final VertxTestContext testContext)
     {
         final Checkpoint messagesSent = testContext.checkpoint(20 * 5);

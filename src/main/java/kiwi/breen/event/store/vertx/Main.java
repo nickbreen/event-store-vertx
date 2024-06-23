@@ -60,7 +60,7 @@ public class Main
                             eventStoreInterceptor);
 
                     vertx.eventBus().addOutboundInterceptor(eventPrefixInterceptor);
-
+                    vertx.eventBus().consumer("event.test", message -> {}); // ensure we delivery our messages
                     vertx.deployVerticle(new NoiseVerticle(100_000, "event.test")).onComplete(
                             x -> LOGGER.info("Verticle started {}", x),
                             cause -> LOGGER.error("Verticle failed to start", cause)
